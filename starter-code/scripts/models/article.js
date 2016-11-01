@@ -57,11 +57,9 @@ Article.fetchAll = function() {
       1.b Store that data in localStorage so that we can skip the server call next time,
       1.c And then render the index page.*/
     $.getJSON('../../data/blogArticles.json', function(blogData){
-     // Store that data in localStorage so we can skip the server call next time
       localStorage.setItem('blogArticles', JSON.stringify(blogData));
       Article.loadAll(blogData);
       articleView.renderIndexPage();
-      console.log('success');
     });
   }
 };
